@@ -40,7 +40,7 @@ void Screen::render (uint32_t screenPixels[480][272]) {
 
 void Screen::clear (uint32_t color) {
     for (int i = 0; i <= 480; i++) {
-        for (int j = 0; j <= 272; i++) {
+        for (int j = 0; j <= 272; j++) {
             setPixel(i, j, color);
         }
     }

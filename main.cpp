@@ -30,17 +30,15 @@ void setupCallbacks() {
 auto main() -> int {
     setupCallbacks();
 
-    
     uint32_t screenPixels[480][272] = {{0xFFFFFF, 0xFFFFFF}, {0xFFFFFF, 0xFFFFFF}};
+    Screen screen;
 
+    screen.init();
+    screen.clear(0x18B30000);
 
     
     while (1) {
-        Screen screen;
-        screen.init();
-        
-        screen.clear(0x18B30000);
-
+        screen.render(screenPixels);
         screen.swapBuffers();
         sceDisplayWaitVblankStart();
     }
